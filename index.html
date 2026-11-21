@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CinePulse — Discover Movies &amp; Shows</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+    <!-- STICKY NAVBAR -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">
+                <i class="fas fa-film"></i> Cine<span>Pulse</span>
+            </a>
+
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search movies, actors, or years..." aria-label="Search movies" />
+            </div>
+
+            <button type="button" class="watchlist-toggle" id="watchlist-toggle">
+                <i class="fas fa-bookmark"></i>
+                <span>Watchlist</span>
+                <span class="badge" id="watchlist-count">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- FEATURED HERO BANNER -->
+    <section class="hero" id="home">
+        <div class="hero-backdrop" id="hero-backdrop"></div>
+        <div class="hero-content container">
+            <span class="hero-pill">Featured Pick</span>
+            <h1 id="hero-title">Interstellar Odyssey</h1>
+            <p class="hero-meta" id="hero-meta">2025 &bull; Sci-Fi / Adventure &bull; &#9733; 8.9</p>
+            <p class="hero-desc" id="hero-desc">
+                When Earth's deep-space relay goes silent, a small crew pilots an experimental vessel beyond the outer rim to uncover what happened to humanity's first colony.
+            </p>
+            <div class="hero-actions">
+                <button type="button" class="btn btn-primary" id="hero-details-btn">
+                    <i class="fas fa-play"></i> View Details
+                </button>
+                <button type="button" class="btn btn-secondary" id="hero-watchlist-btn">
+                    <i class="fas fa-plus"></i> Add to Watchlist
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GENRE FILTER & MOVIE CATALOG -->
+    <main class="container section-pad" id="catalog">
+        <div class="catalog-header">
+            <h2 id="section-title">Trending Movies</h2>
+            <div class="genre-filters" id="genre-filters" role="group" aria-label="Filter movies by genre">
+                <button type="button" class="filter-btn active" data-genre="all">All</button>
+                <button type="button" class="filter-btn" data-genre="Action">Action</button>
+                <button type="button" class="filter-btn" data-genre="Sci-Fi">Sci-Fi</button>
+                <button type="button" class="filter-btn" data-genre="Drama">Drama</button>
+                <button type="button" class="filter-btn" data-genre="Thriller">Thriller</button>
+                <button type="button" class="filter-btn" data-genre="Comedy">Comedy</button>
+            </div>
+        </div>
+
+        <div class="movie-grid" id="movie-grid">
+            <!-- Movie cards populated by scripts/app.js -->
+        </div>
+    </main>
+
+    <!-- WATCHLIST SIDEBAR -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="watchlist-drawer" id="watchlist-drawer" aria-label="Saved watchlist">
+        <div class="drawer-header">
+            <h3>My Watchlist</h3>
+            <button type="button" class="close-btn" id="close-drawer" aria-label="Close watchlist">&times;</button>
+        </div>
+        <div class="drawer-body" id="watchlist-items">
+            <!-- Watchlist items populated by scripts/app.js -->
+        </div>
+    </aside>
+
+    <!-- MOVIE DETAILS MODAL -->
+    <div class="modal" id="movie-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-card">
+            <button type="button" class="close-btn modal-close" id="close-modal" aria-label="Close details">&times;</button>
+            <div class="modal-grid" id="modal-body">
+                <!-- Movie details injected by scripts/app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 CinePulse. Built with HTML, CSS &amp; JavaScript.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
